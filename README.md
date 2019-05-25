@@ -4,37 +4,38 @@ Acesse o link https://www.lingscars.com/ e liste pelo menos dois bugs identifica
 
 Obs.: os testes foram realizados sobre os browsers Firefox e Chrome
 
-BUG 1
+### BUG 1
 - retorna link quebrado https://www.lingscars.com/feature/fruitmachine.php?id=532 ao clicar na imagem da bomba de gasolina (carulike_white.png) ou no texto “CAR-U-LIKE-ATOR”.
-- a página exibe apenas a mensagem “Fatal error: require(): Failed opening required '../header_min.php' (include_path='.:/usr/share/php') in /srv/www/lingscars.com/public/feature/fruitmachine.php on line 29”
+- a página exibe apenas a mensagem “Fatal error: require(): Failed opening required '../header_min.php' (include_path='.:/usr/share/php') in /srv/www/lingscars.com/public/feature/fruitmachine.php on line 29”  
 
-BUG 2
-- não retorna crítica ao clicar no botão “Update Me!” do form de ID=autoupdate caso não preencha quaisquer dos campos “Name”, “Email” e “Confirm Email” ou os preencha incorretamente.
+### BUG 2
+- não retorna crítica ao clicar no botão “Update Me!” do form de ID=autoupdate caso não preencha quaisquer dos campos “Name”, “Email” e “Confirm Email” ou os preencha incorretamente.  
 
-BUG 3
+### BUG 3
 - navegar pelo menu lateral até a opção “Quote” e clicar no banner “Quote Tutorial starring Wong!” aparentemente nada ocorre. Porém, ao tentar clicar nas demais opções do menu (Customers, About Ling, Fun stuff, Free stuff e Live staff) permanece na mesma página pois carregou sobreposta na parte mais abaixo um div id=”help_video”
 
 ------------------------------------------------
 
-Selecione dois bugs identificados e elabore um texto para o desenvolvedor reproduzir o bug e corrigi-lo.
-BUG 1 (passos para reprodução)
-- clicar em qualquer opção de link disponível na lateral esquerda abaixo do label “CARS A-Z” para exibir informações sobre modelos ofertados
-- rolar a tela para baixo até localizar imagem da bomba de gasolina e texto “CAR-U-LIKE-ATOR”
-- clicar na imagem da bomba de gasolina (carulike_white.png) ou no texto “CAR-U-LIKE-ATOR”.
+Selecione dois bugs identificados e elabore um texto para o desenvolvedor reproduzir o bug e corrigi-lo.  
 
-BUG 2 (passos para reprodução)
-    - clicar em qualquer opção de link disponível na lateral esquerda abaixo do label “CARS A-Z” para exibir informações sobre modelos ofertados
-    - clicar em qualquer botão “more info” da order price
-    - rolar a página para baixo, localizar e clicar no link <Returning your car>
-    - clicar no botão “Update Me! sem ter preenchido quaisquer dos campos do form “AUTO-UPDATES”
+### BUG 1 (passos para reprodução)  
+- clicar em qualquer opção de link disponível na lateral esquerda abaixo do label “CARS A-Z” para exibir informações sobre modelos ofertados  
+- rolar a tela para baixo até localizar imagem da bomba de gasolina e texto “CAR-U-LIKE-ATOR”  
+- clicar na imagem da bomba de gasolina (carulike_white.png) ou no texto “CAR-U-LIKE-ATOR”.  
 
-BUG 3 (passos para reprodução)
+### BUG 2 (passos para reprodução)  
+- clicar em qualquer opção de link disponível na lateral esquerda abaixo do label “CARS A-Z” para exibir informações sobre modelos ofertados  
+- clicar em qualquer botão “more info” da order price  
+- rolar a página para baixo, localizar e clicar no link <Returning your car>  
+- clicar no botão “Update Me! sem ter preenchido quaisquer dos campos do form “AUTO-UPDATES”
+    
+### BUG 3 (passos para reprodução)
 - clicar na opção “Cars” do Menu lateral esquerdo
 - clicar na opção “Quote”
 - clicar no banner “Quote Tutorial starring Wong!”
-- rolar a página para baixo para conseguir visualizar o vídeo tutorial sobre o formulário de cotação
+- rolar a página para baixo para conseguir visualizar o vídeo tutorial sobre o formulário de cotação  
 
--------------------------------------------------
+-------------------------------------------------  
 
 Proponha 4 melhorias para o site e detalhe-as (se julgar necessário, poderá adicionar imagens ou sites de referência).
 
@@ -80,52 +81,61 @@ Fluxo Alternativo 02: (Senha inválida)
     Se o cliente introduz uma senha inválida o cartão MB é ejetado e o caso de uso reinicializado.
     Se tal ocorrer 3 vezes consecutivas, o sistema aciona medidas de segurança e “recolhe” o cartão e cancela a transação; não permitindo qualquer interação nos 2 minutos seguintes.
 
-TC1 - cliente utiliza cartão eletrônico válido e senha correta
-  Pré-requisito: sistema exibe tela solicitando cartão eletrônico
-STEP  AÇÃO                                            RESULTADO ESPERADO
-1     introduzir cartão eletrônico com ID VÁLIDO      cartão recebido na leitora
-2     digitar senha VÁLIDA                            senha com máscara oculta exibida na tela. Ex.: ******
-3     ativar botão “Entrar”                           sistema valida o ID do cartão e senha E libera acesso
+#### TC1 - cliente utiliza cartão eletrônico válido e senha correta
+##### Pré-requisito: sistema exibe tela solicitando cartão eletrônico
 
-TC2 - cliente corrige senha informada
-  Pré-requisito: sistema exibe tela solicitando cartão eletrônico
-STEP  AÇÃO                                            RESULTADO ESPERADO
-1     introduzir cartão eletrônico                    cartão recebido na leitora
-2     digitar senha INVÁLIDA                          senha com máscara oculta exibida na tela.  Ex.: ******
-3     ativar botão “Limpar”                           sistema limpa campo “senha”
+| STEP | AÇÃO                                       | RESULTADO ESPERADO                                    |
+|------|--------------------------------------------|-------------------------------------------------------|
+| 1    | introduzir cartão eletrônico com ID VÁLIDO | cartão recebido na leitora                            |
+| 2    | digitar senha VÁLIDA                       | senha com máscara oculta exibida na tela. Ex.: ****** |
+| 3    | ativar botão “Entrar”                      | sistema valida o ID do cartão e senha E libera acesso |
 
-TC3 - cliente cancela operação antes de informar senha
-  Pré-requisito: sistema exibe tela solicitando cartão eletrônico
-STEP  AÇÃO                                            RESULTADO ESPERADO
-1     introduzir cartão eletrônico                    cartão recebido na leitora
-2     ativar botão “Cancelar”                         sistema ejeta cartão da leitora E exibe mensagem “Operação cancelada.”
+#### TC2 - cliente corrige senha informada
+##### Pré-requisito: sistema exibe tela solicitando cartão eletrônico
 
-TC4 - cliente cancela operação após informar senha
-  Pré-requisito: sistema exibe tela solicitando cartão eletrônico
-STEP  AÇÃO                                            RESULTADO ESPERADO
-1     introduzir cartão eletrônico                    cartão recebido na leitora
-2     digitar senha                                   senha com máscara oculta exibida na tela.  Ex.: ******
-3     ativar botão “Cancelar”                         sistema ejeta cartão da leitora E exibe mensagem “Operação cancelada.”
+| STEP | AÇÃO                         | RESULTADO ESPERADO                        |
+|------|------------------------------|-------------------------------------------|
+| 1    | introduzir cartão eletrônico | cartão recebido na leitora                |
+| 2    | digitar senha INVÁLIDA       | senha com máscara oculta exibida na tela. |
+| 3    | ativar botão “Limpar”        | sistema limpa campo “senha”               |
 
+#### TC3 - cliente cancela operação antes de informar senha
+##### Pré-requisito: sistema exibe tela solicitando cartão eletrônico
 
-TC5 - cliente informa senha inválida até três vezes
-  Pré-requisito: sistema exibe tela solicitando cartão eletrônico
-STEP  AÇÃO                                            RESULTADO ESPERADO
-1     introduzir cartão eletrônico com ID VÁLIDO      cartão recebido na leitora
-2     digitar senha INVÁLIDA                          senha com máscara oculta exibida na tela. Ex.: ******
-3     ativar botão “Entrar”                         - sistema valida o ID do cartão (OK!)  e senha (NOK!
-                                                    - sistema exibe mensagem “Senha não confere!”
-                                                    - sistema ejeta cartão
-                                                    - sistema imediatamente exibe tela solicitando cartão
-4     introduzir cartão eletrônico com ID VÁLIDO      cartão recebido na leitora
-5     digitar senha INVÁLIDA                          senha com máscara oculta exibida na tela. Ex.: ******
-6     ativar botão “Entrar”                         - sistema valida o ID do cartão (OK!)  e não valida senha (NOK!)
-                                                    - sistema exibe mensagem “Senha não confere! Caso erre 3ª vez o cartão será retido.”
-                                                    - sistema ejeta cartão E cancela a operação
-                                                    - sistema imediatamente exibe tela solicitando cartão
-7     introduzir cartão eletrônico com ID VÁLIDO      cartão recebido na leitora
-8     digitar senha INVÁLIDA                          senha com máscara oculta exibida na tela. Ex.: ******
-9     ativar botão “Entrar”                         - sistema valida o ID do cartão (OK!)  e não valida senha (NOK!)
-                                                    - sistema exibe mensagem “Senha não confere!”
-                                                    - sistema recolhe o cartão E cancela a operação
-                                                    - sistema exibe tela solicitando cartão somente após 2 minutos seguintes
+| STEP 	| AÇÃO                         	| RESULTADO ESPERADO                                                     	|
+|------	|------------------------------	|------------------------------------------------------------------------	|
+| 1    	| introduzir cartão eletrônico 	| cartão recebido na leitora                                             	|
+| 2    	| ativar botão “Cancelar”      	| sistema ejeta cartão da leitora E exibe mensagem “Operação cancelada.” 	|
+
+#### TC4 - cliente cancela operação após informar senha
+##### Pré-requisito: sistema exibe tela solicitando cartão eletrônico
+
+| STEP 	| AÇÃO                         	| RESULTADO ESPERADO                                                     	|
+|------	|------------------------------	|------------------------------------------------------------------------	|
+| 1    	| introduzir cartão eletrônico 	| cartão recebido na leitora                                             	|
+| 2    	| digitar senha                	| senha com máscara oculta exibida na tela.Ex.: ******                   	|
+| 3    	| ativar botão “Cancelar”      	| sistema ejeta cartão da leitora E exibe mensagem “Operação cancelada.” 	|
+
+#### TC5 - cliente informa senha inválida até três vezes
+##### Pré-requisito: sistema exibe tela solicitando cartão eletrônico
+                                                                                                   
+| STEP | AÇÃO                                       | RESULTADO ESPERADO                                                               |
+|------|--------------------------------------------|----------------------------------------------------------------------------------|
+| 1    | introduzir cartão eletrônico com ID VÁLIDO | cartão recebido na leitora                                                |
+| 2    | digitar senha INVÁLIDA                     | senha com máscara oculta exibida na tela. Ex.: ******                     |
+| 3    | ativar botão “Entrar”                      | sistema valida o ID do cartão (OK!)                                       |
+|      |                                            | sistema exibe mensagem “Senha não confere!”                               |
+|      |                                            | sistema ejeta cartão                                                      |
+|      |                                            | sistema imediatamente exibe tela solicitando cartão                       |
+| 4    | introduzir cartão eletrônico com ID VÁLIDO | cartão recebido na leitora                                                |
+| 5    | digitar senha INVÁLIDA                     | senha com máscara oculta exibida na tela. Ex.: ******                     |
+| 6    | ativar botão “Entrar”                      | sistema valida o ID do cartão (OK!)                                       |
+|      |                                            | sistema exibe mensagem “Senha não confere! Caso erre 3ª vez o cartão será retido.”|
+|      |                                            | sistema ejeta cartão E cancela a operação                                 |  
+|      |                                            | sistema imediatamente exibe tela solicitando cartão                       |
+| 7    | introduzir cartão eletrônico com ID VÁLIDO | cartão recebido na leitora                                                |
+| 8    | digitar senha INVÁLIDA                     | senha com máscara oculta exibida na tela. Ex.: ******                     |
+| 9    | ativar botão “Entrar”                      | sistema valida o ID do cartão (OK!)                                       |  
+|      |                                            | sistema exibe mensagem “Senha não confere!”                               |  
+|      |                                            | sistema recolhe o cartão E cancela a operação                             |  
+|      |                                            | sistema exibe tela solicitando cartão somente após 2 minutos seguintes    |
