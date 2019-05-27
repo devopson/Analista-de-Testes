@@ -1,0 +1,112 @@
+Defeitos
+
+Link quebrado ao clicar em "more info".
+Passos para reproduzir:
+1º Clicar no menu carros
+2º Selecionar a opção "Full Price List"
+3º No box "Chosse a make", escolher a opção "Abarth"
+4º Como todas as outras opções em default, clicar no button "Show me the deals!"
+5º Após clicar, desce a barra de rolagem até a lista de resultados e selecionar
+Abarth 124 Spider Convertible 1.4(primeiro nome da lista).
+6º No thumb em verde acima do Slogan do cabeçalho "LINGsCARS.com", clicar sobre a caminho
+"Abarth"
+7º Clicar em "business prices" abaixo da flecha verde "Personal Customer Abarths"
+8º Clicar na opção "more info"
+O link é enviado para uma página não processada, 404.
+Link direto: https://www.lingscars.com/business-car-leasing/abarth/
+
+Contador mug-quiz não apresentea o valor 1/7
+Passos para reproduzir:
+1º Localizar ao canto direito da tela principal o container "Play Quiz", abaixo
+dos thumbs de social media facebook e twitter.
+2º Clicar no button "Click Here"
+3º Na tela https://www.lingscars.com/mug-quiz, clicar no container "Play Now!"
+4º Selecionar aleatoriamente os valores para circle box até o valor 1/6
+Verifica-se que o após o contador 1/6 os próximos apresentados são  1/8, 1/9 e 1/9 novamente.
+Link direto: https://www.lingscars.com/mug-quiz
+
+
+Erro de requerimento 
+Passos para reproduzir:
+1º Na página inicial, ir até o final da página
+2º Abaixo do slogan "You can trust me..." seleciona a opção "Privacy Policy" em cinza
+3º A página apresentada a seguir mostra mensagem de "Fatal error"
+A mensagem apresentada é para erro no caminho do requerimento da pasta.
+https://www.lingscars.com/privacy.php
+
+Imagens quebradas
+Passos para reproduzir:
+1º No menu lateral, selecionar a opção "Customers"
+2º Em seguida selecionar a opção "Customers in process", em laranja
+3º Descer a barra de rolagem até a frase central em negrito "LIVE Cars being ordered"
+https://www.lingscars.com/customers
+ 
+ 
+4 Melhorias:
+
+1 - Visualmente, o site possuí muitas cores, o que pode confundir o usuário,
+essa melhoria seria de "perfumaria", mas no meu ponto de vista cores com tonalidades
+mais próximas não cansam a visão do usuário.
+2- No menu lateral há uma lista em ordem alfabética de todos os veículos, retirar todos
+os veículos do menu lateral e colocá-los dentro de uma aba abaixo da opção "menu",
+deixaria a página inicial menos longa e esteticamente um pouco apresentável.
+3 - Todas as informações estão maçantes, há muita informação nas imagens, talvez centralizar
+essas informações dentro do button, deixar somente o essencial, por exemplo a marca 
+do veículo e um dado importante como o valor ou ano.
+4 - A estrutura do site parece confusa, há muita informação com letras pequenas e 
+grandes em toda parte, não é específico oque sem dúvidas deixará o usuário confuso.
+Uma reestruturação no designer e arquitetura é fundamental.
+
+
+
+Caso de teste 1: Validar usuário
+1º Caso: Validação máscara cartão magnético deve aceitar somente números
+Step 1: Inserir no local indicado somente números ex: ”9999 9999 9999 9999″
+Resultado esperado: Campo permite somente o preenchimento de valores inteiros.
+Step 2: Inserir o valor máximo de números no campo.
+Resultado esperado: Deverá permitir somente o preenchimento de 4 grupos de números com 4
+números em cada grupo, como o exemplo do "Step 1".
+
+Caso de teste 2: Validar teclado
+2º caso: Um pequeno teclado virtual deverá ser apresentado.
+Step 1: Com o cursor do mouse, inserir uma combinação de números que contemple toda a
+extensão do teclado, ex: "1234", "4567" e assim por diante.
+Resultado Esperado: Todos os valores apresentados devem ser exatamente o numeral clicado.
+Step 2: Após digitar os valores, a tecla corresponde para "deletar" deverá ser acionada para todos os valores
+até que o campo volte a não possuir numerais.
+Resultado Esperado: Os valores antes apresentados serão deletados, somente o campo e branco será apresentado.
+Step 3: Repetir Step 1 e Step 2, 5 vezes.
+Resultado esperado: O campo será apagado, permitindo a reintrodução dos valores as 5 vezes.
+
+Caso de teste 3: Validar Entrada
+3º caso: Comportamento após usuário clicar em "Entrar".
+Step 1: Inserir no campo do cartão eletrônico os valores correspondentes do cliente, digitar a senha e
+em seguida clicar no botão "Entrar".
+Resultado esperado: Para valores válidos a confirmação da API deve permitir a conclusão da transação
+informando ao usuário ou através de mensagem de pop-up ou prosseguindo o acesso ao próximo nível.
+Step 2: Repetir o "Step 1" deste caso de teste.
+Resultado esperado: Para valores inválidos a confirmação da API devolve a informação inválida, será então
+apresentada uma pop-up para o usuário informando: Dados inválido, por favor preencha os dados corretamente.
+
+Fluxo Alternativo 01: Validar consulta
+1º caso: Comportamento do sistema caso usuário cancele a transação.
+Step 1: Inserir valores válidos, senha e clicar em "Entrar".
+Resultado esperado: Sistema deverá fazer a consulta da API.
+Step 2: Após clicar em "Entrar", logo em seguida selecionar a opção "Cancelar".
+Resultado esperado: Sistema cancela requisição e retorna o usuário para o caso de teste 1,
+sem debitar nenhum valor.
+
+Fluxo Alternativo 02: Validar cancelamento da transação
+1º caso: Comportamento do sistema ao usuário informar senha inválida.
+Step 1: Inserir valor válido para cartão eletrônico e digitar senha inválida.
+Resultado esperado: Mensagem informando usuário que sua senha é inválida é apresentado.
+Step 2: Repetir Step 1 deste caso de teste.
+Resultado esperado: Mensagem informado usuário que sua senha está inválida pela segunda vez,
+com sinalização de aviso caso erre pela terceira vez.
+Step 3: Repetir Step 1 deste caso de teste.
+Resultado esperado: Mensagem informado usuário que a transação foi cancelada informando motivo e
+dá a opção para o cliente retornar dentro de dois minutos.
+Step 4: Repetir Step 1 deste caso de teste.
+Resultado esperado: Sistema não permite interação durante dois minutos.
+
+Fim
