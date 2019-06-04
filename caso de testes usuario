@@ -1,0 +1,24 @@
+Contador:
+Caso de uso “Validar usuário”
+Localização:
+Validador de usuário
+Objetivo:
+Validar usuário utilizando cartão magnético e senha
+Caso de testes:
+1. usuário devera de início ter um cartão magnético (Token) valido e homologado ao sistema.
+2. Ter permissões de acesso ao sistema sendo cadastrado com usuário e senha junto ao administrador do sistema.
+3. Acessar tela principal do sistema, inserir o certificado ou cartão magnético ao leitor
+3.1 Sistema ira efetuar uma leitura dos dados vinculados ao cartão adicionado aonde ira abrir uma tela com as opções de digitação de senha.
+3.2 Usuário ira utilizar um teclado numérico que estará conectado ao seu computador de acesso para que possa fazer a inserção da senha numérica, Caso cliente erre a senha ele tera a opção de limpar e incluir novamente a senha diversas vezes antes de dar enter e ter acesso ao sistema.
+3.3 após ele ter feito a inserção da senha o sistema ira ler a informação digitada e identifica o cartão conectado ao leitor caso os mesmos forem validos ele libera o acesso e libera o sistema para utilização. 
+Condições alternativas.
+Fluxos alternativos 01: Se o cliente quiser cancelar a operação.
+1. Após cliente fazer acesso com senha e cartão magnético o mesmo pode cancelar a operação de acesso ao sistema a qualquer momento.
+2. Após ele ter a decisão de cancelar a inicialização do sistema o mesmo retorno ao início do caso de uso e inicia novamente o sistema sem ter perda de informações do usuário anterior.
+
+Fluxo alternativo 02: Senha invalida.
+1. Usuário não lembra de sua senha ou não e cadastrado ao mesmo o cartão Magnético e ejetado eu caso de uso e reinicializado aonde o sistema volta a estaca inicial sem perda de informações.
+2. Mais quando usuário não lembra de sua senha ou ate mesmo não e cadastrado e acontecer de ser digitada 3 vezes consecutivas, o sistema ira automaticamente ativa medidas de segurança aonde ele ira mandar comandos mecânicos ao leitor de cartão e recolhe o  cartão e cancela a transação não permitimo qualquer inserção nos próximos 2 minutos.
+Resultado Esperado:
+ Validação de senha e cartão magnético apara acesso a sistema.
+
